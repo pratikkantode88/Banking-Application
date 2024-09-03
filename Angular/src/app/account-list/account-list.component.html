@@ -1,0 +1,35 @@
+
+<div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded ">
+<h1 class="card text-center mt-3 text-success bg-danger bg-opacity-75">All Accounts Details</h1>
+</div>
+<div *ngIf="deleteMsg">
+  <h1 class="alert alert-danger">Delete Successfully!</h1>
+</div> 
+<div class="container mt-3 shadow-lg p-3 mb-5 bg-info rounded ">
+    <table class="table border border-bottom-0 ">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Account Holder Name</th>
+          <th scope="col">Balance</th>
+          <th scope="col" class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let account of accounts">
+          <th scope="row">{{account.id}}</th>
+          <td scope="row">{{account.accHolderName}}</td>
+          <td scope="row">${{account.balance}}</td>
+          <td (click)="deposit(account.id)" class="btn btn-primary m-2 bg-secondary bg-opacity-75">Deposit</td>
+          <td (click)="withdraw(account.id)" class="btn btn-danger m-2 bg-secondary bg-opacity-75">Withdraw</td>
+          <td (click)="deleteAcc(account.id)" class="btn btn-info m-2 bg-secondary bg-opacity-75">Delete</td>
+          <td (click)="view(account.id)" class="btn btn-danger m-2 bg-secondary bg-opacity-75">View</td>
+        </tr>
+        </tbody>
+      
+    </table>
+    <div class="text-center">
+    <button type="submit" class="btn btn-primary" routerLink="/admin">Back</button>
+    <button type="submit" class="btn btn-primary btn-space" routerLink="/add_account">Add Account</button>
+    </div>  
+    </div>

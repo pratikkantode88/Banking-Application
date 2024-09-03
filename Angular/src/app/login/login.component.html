@@ -1,0 +1,16 @@
+<div class="container p-3">
+    <div *ngIf="! isAdmin">
+        <h1 class="card shadow-lg bg-danger text-center">This application can only be used by admin</h1>
+    </div>
+ 
+     <div class="login-page">
+       <div class="form">
+         
+         <form class="login-form" (ngSubmit)="login()">
+           <input type="text" [(ngModel)]="username" name="username" class="form-control" id="username" placeholder="username"/>
+           <input type="password" [(ngModel)]="password" name="password" class="form-control" id="password" placeholder="password"/>
+           <button>login</button>
+          
+         </form>
+       </div>
+     </div>

@@ -1,0 +1,36 @@
+<div class="conainer mt-3 shadow-lg p-3 mb-5  rounded">
+
+    <div *ngIf="accountCreated">
+        <h1 class="alert alert-success">Account Create Successfully!</h1>
+    </div>
+
+<div class="card card-center bg-info col-md-6 offset-md-3">
+    <h1 class="card text-center mt-3  bg-secondary bg-opacity-75">Add Accounts Informations</h1>
+
+<form id="form" (ngSubmit)="saveAccount()">
+    <div class="col-md-12 offset-md-4">
+    <div class="form-group mb-3 ">
+       <label for="name">Account Holder Name</label>
+       <br />
+       <div class="input-group">
+          <div class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i>            </div>
+          <input type="text" id="accountHolderName" name="accountHolderName" [(ngModel)]="account.accHolderName" placeholder="Enter Name"/>
+          </div>
+       </div>
+    
+    <div class="form-group mb-3">
+       <label for="balance">Balance</label>
+       <br />
+       <div class="input-group">
+          <div class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i> </div>
+          <input type="text" id="balance" name="balance" [(ngModel)]="account.balance" placeholder="Enter Balance"/>
+          </div>
+       </div>
+
+    <button type="submit" class="btn btn-primary btn-space">Add</button>
+    <button type="submit" class="btn btn-primary" routerLink="/accounts">Back</button>
+    
+</div>
+ </form>
+</div>
+</div>
